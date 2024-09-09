@@ -14,8 +14,6 @@ const board = (() => {
       div.setAttribute('class', `box ${i + 1}`);
       emptyBoard.appendChild(div);
     }
-  
-    return emptyBoard;
   };
 
   const getBoxesFromBoard = () => {
