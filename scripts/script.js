@@ -58,6 +58,5 @@ const board = (() => {
   return {
     createEmptyBoard,
     getRows,
-    getBoxesFromBoard
   }
 })();
