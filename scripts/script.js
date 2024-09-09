@@ -16,6 +16,7 @@ const board = (() => {
     }
   };
 
+  // Private method
   const getBoxesFromBoard = () => {
     let boxes = [];
 
@@ -57,6 +58,6 @@ const board = (() => {
   return {
     createEmptyBoard,
     getRows,
-    getBoxesFromBoard,
+    getBoxesFromBoard
   }
 })();
