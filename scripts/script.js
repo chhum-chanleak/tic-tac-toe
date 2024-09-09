@@ -52,11 +52,40 @@ const board = (() => {
     }
 
     return { row1, row2, row3 };
+  };
+  
+  const getColumns = () => {
+    let column1 = [];
+    let column2 = [];
+    let column3 = [];
+
+    for (let i = 0; i < getBoxesFromBoard().length; i += 1) {
+      switch (getBoxesFromBoard()[i].getAttribute('class')) {
+        case 'box 1':
+        case 'box 4':
+        case 'box 7':
+          column1.push(getBoxesFromBoard()[i]);
+        break;
+        case 'box 2':
+        case 'box 5':
+        case 'box 8':
+          column2.push(getBoxesFromBoard()[i]);
+        break;
+        case 'box 3':
+        case 'box 6':
+        case 'box 9':
+          column3.push(getBoxesFromBoard()[i]);
+        break;
+      }
+    }
+
+    return { column1, column2, column3 };
   }; 
 
   // Make variables and/or functions public
   return {
     createEmptyBoard,
     getRows,
+    getColumns,
   }
 })();
