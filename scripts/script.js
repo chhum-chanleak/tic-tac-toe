@@ -25,6 +25,34 @@ const board = (() => {
     return boxes;
   };
 
+  const getRows = () => {
+    let row1 = [];
+    let row2 = [];
+    let row3 = [];
+
+    for (let i = 0; i < getBoxesFromBoard().length; i += 1) {
+      switch (getBoxesFromBoard()[i].getAttribute('class')) {
+        case 'box 1':
+        case 'box 2':
+        case 'box 3':
+          row1.push(getBoxesFromBoard()[i]);
+        break;
+        case 'box 4':
+        case 'box 5':
+        case 'box 6':
+          row2.push(getBoxesFromBoard()[i]);
+        break;
+        case 'box 7':
+        case 'box 8':
+        case 'box 9':
+          row3.push(getBoxesFromBoard()[i]);
+        break;
+      }
+    }
+
+    return { row1, row2, row3 };
+  }; 
+
   // Make variables and/or functions public
   return {
     createEmptyBoard,
