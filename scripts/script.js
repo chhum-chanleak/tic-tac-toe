@@ -98,11 +98,25 @@ const board = (() => {
     return mainDiagonal;
   };
 
+  const getOffDiagonal = () => {
+    let offDiagonal = [];
+
+    for (let i = 0; i < getBoxesFromBoard().length; i += 1) {
+      switch(getBoxesFromBoard()[i].getAttribute('class')) {
+        case 'box 3':
+        case 'box 5':
+        case 'box 7': offDiagonal.push(getBoxesFromBoard()[i]);
+      }
+    }
+    return offDiagonal;
+  };
+
   // Make variables and/or functions public
   return {
     createEmptyBoard,
     getRows,
     getColumns,
     getMainDiagonal,
+    getOffDiagonal,
   }
 })();
