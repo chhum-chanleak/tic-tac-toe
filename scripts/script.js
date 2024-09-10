@@ -144,3 +144,10 @@ const board = (() => {
     hasWon,
   }
 })();
+
+// Game module pattern
+const game = (() => {
+
+  // Make variables and/or functions public
+  return {};
+})();
