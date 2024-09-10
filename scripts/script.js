@@ -80,12 +80,29 @@ const board = (() => {
     }
 
     return { column1, column2, column3 };
-  }; 
+  };
+  
+  // Get main(backward) diagonal boxes
+  const getMainDiagonal = () => {
+    let mainDiagonal = [];
+
+    for (let i = 0; i < getBoxesFromBoard().length; i += 1) {
+
+      switch(getBoxesFromBoard()[i].getAttribute('class')) {
+        case 'box 1':
+        case 'box 5':
+        case 'box 9': mainDiagonal.push(getBoxesFromBoard()[i]);
+          break;
+      }
+    }
+    return mainDiagonal;
+  };
 
   // Make variables and/or functions public
   return {
     createEmptyBoard,
     getRows,
     getColumns,
+    getMainDiagonal,
   }
 })();
