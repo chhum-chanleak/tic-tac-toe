@@ -152,3 +152,15 @@ const game = (() => {
   // Make variables and/or functions public
   return {};
 })();
+
+// Players module pattern
+const players = (() => {
+  let players = {
+    player1: {
+      sign: 'X',
+    },
+    player2: {
+      sign: 'O',
+    }
+  };
+})();
