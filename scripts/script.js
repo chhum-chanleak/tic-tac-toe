@@ -111,6 +111,16 @@ const board = (() => {
     return offDiagonal;
   };
 
+  // Get textContents of the passed parameter and return an array of textContents
+  const getTextContents = (direction) => {
+    let contents = [];
+
+    for (let i = 0; i < direction.length; i += 1) {
+      contents.push(direction[i].textContent);
+    }
+    return contents;
+  };
+
   // Make variables and/or functions public
   return {
     createEmptyBoard,
@@ -118,5 +128,6 @@ const board = (() => {
     getColumns,
     getMainDiagonal,
     getOffDiagonal,
+    getTextContents,
   }
 })();
