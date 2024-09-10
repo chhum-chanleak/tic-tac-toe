@@ -165,4 +165,11 @@ const players = (() => {
   };
 
   let isPlayer1 = true;
+
+  const getPlayer1Status = () => isPlayer1;
+
+  // Make variables and/or functions public
+  return {
+    getPlayer1Status,
+  };
 })();
