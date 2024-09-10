@@ -121,6 +121,18 @@ const board = (() => {
     return contents;
   };
 
+  // Check and return true when items of direction has the same textContent
+  const hasWon = (direction) => {
+    for (let i = 0; i < direction.length; i += 1) {
+      if (direction[i].textContent !== '') {
+        if ((direction[i].textContent === direction[i + 1].textContent) && (direction[i + 1].textContent === direction[i + 2].textContent)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
   // Make variables and/or functions public
   return {
     createEmptyBoard,
@@ -129,5 +141,6 @@ const board = (() => {
     getMainDiagonal,
     getOffDiagonal,
     getTextContents,
+    hasWon,
   }
 })();
