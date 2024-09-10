@@ -136,6 +136,7 @@ const board = (() => {
   // Make variables and/or functions public
   return {
     createEmptyBoard,
+    getBoxesFromBoard,
     getRows,
     getColumns,
     getMainDiagonal,
