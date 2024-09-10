@@ -163,4 +163,6 @@ const players = (() => {
       sign: 'O',
     }
   };
+
+  let isPlayer1 = true;
 })();
