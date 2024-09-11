@@ -158,8 +158,17 @@ const game = (() => {
     }
   };
 
+  // Apply event listener
+  const addEvent = (nodes) => {
+    for (let i = 0; i < nodes.length; i += 1) {
+      nodes[i].addEventListener('click', handleBox);
+    }
+  };
+
   // Make variables and/or functions public
-  return {};
+  return {
+    addEvent,
+  };
 })();
 
 // Players module pattern
