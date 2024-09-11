@@ -221,6 +221,8 @@ const game = (() => {
     return false;
   };
 
+  const getNumberOfTurns = () => numberOfTurns;
+
   // Make variables and/or functions public
   return {
     addEvent,
