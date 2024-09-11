@@ -156,3 +156,11 @@ FUNCTION togglePlayer1Status():
   OTHERWISE SET isPlayer1 = true
 ENDFUNCTION
  <-
+
+ <-
+ FUNCTION isEmpty(event):
+  IF target's content = '' AND (target's content NOT = 'X' OR target's content NOT = 'O'), THEN RETURN true
+  ENDIF
+  RETURN false
+ENDFUNCTION
+ ->
