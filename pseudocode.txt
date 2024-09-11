@@ -187,3 +187,9 @@ FUNCTION getDirectionsObject():
   };
 ENDFUNCTION
 <-
+
+->
+FUNCTION getNumberOfTurns():
+  RETURN numberOfTurns
+ENDFUNCTION
+<-
