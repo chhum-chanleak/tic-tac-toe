@@ -143,3 +143,9 @@ FUNCTION handleDOMContentLoaded():
   CALL body.appendChild(board.getEmptyBoard())
 ENDFUNCTION
 <-
+
+->
+FUNCTION startGame():
+  ADD event(handleDOMContentLoaded) to document's object
+ENDFUNCTION
+<-
