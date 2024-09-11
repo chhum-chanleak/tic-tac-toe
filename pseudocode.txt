@@ -135,3 +135,11 @@ FUNCTION addEvent(array):
   ENDFOR
 ENDFUNCTION
 <-
+
+->
+FUNCTION handleDOMContentLoaded():
+  CALL board.createEmptyBoard()
+  CALL game.addEvent(board.getBoxesFromBoard)
+  CALL body.appendChild(board.getEmptyBoard())
+ENDFUNCTION
+<-
