@@ -164,3 +164,24 @@ ENDFUNCTION
   RETURN false
 ENDFUNCTION
  ->
+
+->
+FUNCTION getDirectionsObject():
+  RETURN directions = {
+    rows: {
+      0: row1,
+      1: row2,
+      2: row3,
+    },
+    columns: {
+      0: column1,
+      1: column2,
+      2: column3,
+    },
+    diagonal: {
+      main: mainDiagonal,
+      off: offDiagonal,
+    }
+  };
+ENDFUNCTION
+<-
