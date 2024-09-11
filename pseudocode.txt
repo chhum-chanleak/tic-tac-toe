@@ -1,0 +1,137 @@
+# findMax is an example
+function findMax(numbers):
+  max = numbers[0]
+
+  for each number in numbers:
+    if number > max:
+      max = number
+
+  return max
+
+--->
+function createEmptyBoard():
+  init boardGame
+  init length
+
+  for each number in length:
+    init div 
+    SET div's id TO i + 1
+    SET div's class TO 'box' i+ 1
+    add div TO boardGame
+  ENDFOR
+
+  return boardGame
+ENDFUNCTION
+
+--->
+  function getRows():
+    init row1
+    init row2
+    init row3
+
+    for each child in emptyBoard:
+      switch(child's class):
+        CASE'box 1'
+            'box 2'
+            'box 3' put child in row1
+        ENDCASE
+        CASE'box 4'
+            'box 5'
+            'box 6' put child in row2
+        ENDCASE
+        CASE'box 7'
+            'box 8'
+            'box 9' put child in row3
+        ENDCASE
+    ENDFOR
+
+    return { row1, row2, row2 }
+  ENDFUNCTION
+
+  --->
+  function getColumns():
+    init column1
+    init column2
+    init column3
+
+    for each child in emptyBoard:
+      switch(child's class):
+        CASE'box 1'
+            'box 4'
+            'box 7' put child in column1
+        ENDCASE
+        CASE'box 2'
+            'box 5'
+            'box 8' put child in column2
+        ENDCASE
+        CASE'box 3'
+            'box 6'
+            'box 9' put child in column3
+        ENDCASE
+    ENDFOR
+
+    return { column1, column2, column3 }
+  ENDFUNCTION
+
+--->
+function getMainDiagonal():
+  INIT mainDiagonal = []
+
+  for each child in emptyBoard:
+    IF child's class = 'box 1' or 'box 5' or 
+    'box 9', THEN put child in mainDiagonal
+    ENDIF
+  ENDFOR
+
+  RETURN mainDiagonal
+ENDFUNCTION
+<---
+
+---> 
+FUNCTION getOffDiagonal():
+  INIT offDiagonal
+
+  for each child in emptyBoard:
+    IF child's class = 'box 3' or 'box 5' or 'box 7'
+    , THEN put child in offDiagonal
+    ENDIF
+  ENDFOR
+
+  return offDiagonal
+ENDFUNCTION
+<---
+
+--->
+FUNCTION getTextContents(direction):
+  INIT contents = [];
+
+  FOR each content in direction's textContent:
+    contents.push(content's textContent);
+  ENDFOR
+
+  return contents
+ENDFUNCTION
+<---
+
+--->
+FUNCTION hasWon(direction):
+  FOR each item in direction:
+    IF (direction[i]'s textContent = direction[i + 1]'s textContent AND direction[i + 1]'s textContent = direction[i]'s textContent), THEN RETURN true
+    ENDIF
+  ENDFOR
+  RETURN false
+ENDFUNCTION  
+<---
+
+->
+FUNCTION handleBox(event):
+  PRINT box's target  
+<-
+
+->
+FUNCTION addEvent(array):
+  FOR each item in array:
+    array[i] ADD click event(handleBox)
+  ENDFOR
+ENDFUNCTION
+<-
