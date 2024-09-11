@@ -148,7 +148,7 @@ const board = (() => {
         2: getColumns().column2,
         3: getColumns().column3,
       },
-      diagonal: {
+      diagonals: {
         main: getMainDiagonal(),
         off: getOffDiagonal(),
       }
