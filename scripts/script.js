@@ -135,6 +135,26 @@ const board = (() => {
     return false;
   };
 
+  // Get all directions from board-game as an object
+  const getDirectionsObject = () => {
+    return directions = {
+      rows: {
+        1: getRows().row1,
+        2: getRows().row2,
+        3: getRows().row3,
+      },
+      columns: {
+        1: getColumns().column1,
+        2: getColumns().column2,
+        3: getColumns().column3,
+      },
+      diagonal: {
+        main: getMainDiagonal(),
+        off: getOffDiagonal(),
+      }
+    };
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -146,7 +166,7 @@ const board = (() => {
     getOffDiagonal,
     getTextContents,
     hasWon,
-  }
+  };
 })();
 
 // Game module pattern
