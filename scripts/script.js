@@ -149,6 +149,15 @@ const board = (() => {
 // Game module pattern
 const game = (() => {
 
+  // Handle functions
+  const handleBox = (event) => {
+    for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
+      if (players.getPlayer1Status()) {
+        event.target.textContent = `${players.players.player1.sign}`;
+      }
+    }
+  };
+
   // Make variables and/or functions public
   return {};
 })();
@@ -170,6 +179,7 @@ const players = (() => {
 
   // Make variables and/or functions public
   return {
+    players,
     getPlayer1Status,
   };
 })();
