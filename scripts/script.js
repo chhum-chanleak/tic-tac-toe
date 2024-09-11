@@ -184,6 +184,7 @@ const game = (() => {
   // Make variables and/or functions public
   return {
     addEvent,
+    startGame,
   };
 })();
 
@@ -208,4 +209,5 @@ const players = (() => {
     getPlayer1Status,
   };
 })();
+
 
