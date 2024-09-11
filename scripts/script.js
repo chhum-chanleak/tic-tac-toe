@@ -179,6 +179,7 @@ const game = (() => {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
             event.target.textContent = `${player.players.player1.sign}`;
+            numberOfTurns += 1;
             player.togglePlayer1Status();
           }
      } else {
@@ -186,6 +187,7 @@ const game = (() => {
             event.target.textContent = `${
               player.players.player2.sign
             }`;
+            numberOfTurns += 1;
             player.togglePlayer1Status();
           }
       }
