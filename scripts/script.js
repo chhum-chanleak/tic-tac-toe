@@ -211,9 +211,11 @@ const player = (() => {
   let players = {
     player1: {
       sign: 'X',
+      score: 0,
     },
     player2: {
       sign: 'O',
+      score: 0,
     }
   };
 
