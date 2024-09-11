@@ -158,6 +158,12 @@ const game = (() => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (player.getPlayer1Status()) {
         event.target.textContent = `${player.players.player1.sign}`;
+        player.togglePlayer1Status();
+     } else {
+       event.target.textContent = `${
+         player.players.player2.sign
+       }`;
+       player.togglePlayer1Status();
       }
     }
   };
@@ -218,3 +224,5 @@ const player = (() => {
     togglePlayer1Status,
   };
 })();
+
+game.startGame();
