@@ -162,6 +162,13 @@ const game = (() => {
     }
   };
 
+  // Handle DOMContentLoaded
+  const handleDOMContentLoaded = () => {
+    board.createEmptyBoard();
+    game.addEvent(board.getBoxesFromBoard);
+    document.body.appendChild(board.getEmptyBoard());
+  };
+
   // Add event to nodes
   const addEvent = (nodes) => {
     for (let i = 0; i < nodes.length; i += 1) {
@@ -196,3 +203,4 @@ const players = (() => {
     getPlayer1Status,
   };
 })();
+
