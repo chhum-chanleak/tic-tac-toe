@@ -123,13 +123,13 @@ const board = (() => {
     return contents;
   };
 
-  // Check and return true when items of direction has the same textContent
+  // Check an array and return true when all array's item has the same values.
   const hasWon = (direction) => {
-    for (let i = 0; i < direction.length; i += 1) {
-      if (direction[i].textContent !== '') {
-        if ((direction[i].textContent === direction[i + 1].textContent) && (direction[i + 1].textContent === direction[i + 2].textContent)) {
-          return true;
-        }
+    const contents = getTextContents(direction);
+
+    for (let i = 0; i < contents.length; i += 1) {
+      if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
+        return true;
       }
     }
     return false;
