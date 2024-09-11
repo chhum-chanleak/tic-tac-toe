@@ -153,6 +153,7 @@ const board = (() => {
 const game = (() => {
 
   // Handle functions
+  // Handle box
   const handleBox = (event) => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (players.getPlayer1Status()) {
