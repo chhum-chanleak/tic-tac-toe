@@ -156,8 +156,8 @@ const game = (() => {
   // Handle box
   const handleBox = (event) => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
-      if (players.getPlayer1Status()) {
-        event.target.textContent = `${players.players.player1.sign}`;
+      if (player.getPlayer1Status()) {
+        event.target.textContent = `${player.players.player1.sign}`;
       }
     }
   };
@@ -189,7 +189,7 @@ const game = (() => {
 })();
 
 // Players module pattern
-const players = (() => {
+const player = (() => {
   let players = {
     player1: {
       sign: 'X',
@@ -209,5 +209,3 @@ const players = (() => {
     getPlayer1Status,
   };
 })();
-
-
