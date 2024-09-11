@@ -165,7 +165,7 @@ const game = (() => {
   // Handle DOMContentLoaded
   const handleDOMContentLoaded = () => {
     board.createEmptyBoard();
-    game.addEvent(board.getBoxesFromBoard);
+    game.addEvent(board.getBoxesFromBoard());
     document.body.appendChild(board.getEmptyBoard());
   };
 
