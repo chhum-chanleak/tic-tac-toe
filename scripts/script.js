@@ -203,9 +203,18 @@ const player = (() => {
 
   const getPlayer1Status = () => isPlayer1;
 
+  const togglePlayer1Status = () => {
+    if (isPlayer1) {
+      isPlayer1 = false;
+    } else {
+      isPlayer1 = true;
+    }
+  };
+
   // Make variables and/or functions public
   return {
     players,
     getPlayer1Status,
+    togglePlayer1Status,
   };
 })();
