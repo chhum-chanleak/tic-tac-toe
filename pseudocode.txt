@@ -149,3 +149,10 @@ FUNCTION startGame():
   ADD event(handleDOMContentLoaded) to document's object
 ENDFUNCTION
 <-
+
+->
+FUNCTION togglePlayer1Status():
+  IF isPlayer1 = true, THEN SET isPlayer1 = false,
+  OTHERWISE SET isPlayer1 = true
+ENDFUNCTION
+ <-
