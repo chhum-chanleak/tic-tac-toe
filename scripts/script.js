@@ -169,6 +169,11 @@ const game = (() => {
     document.body.appendChild(board.getEmptyBoard());
   };
 
+  // ADD event to document's object that fires handleDOMContentLoaded
+  const startGame = () => {
+    document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+  };
+
   // Add event to nodes
   const addEvent = (nodes) => {
     for (let i = 0; i < nodes.length; i += 1) {
