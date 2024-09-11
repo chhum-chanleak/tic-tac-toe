@@ -187,6 +187,14 @@ const game = (() => {
     }
   };
 
+  // Check to see if the box is empty
+  const isEmpty = (event) => {
+    if (event.target.textContent === '' && (event.target.textContent !== 'X' || event.target.textContent !== 'O')) {
+      return true;
+    }
+    return false;
+  };
+
   // Make variables and/or functions public
   return {
     addEvent,
