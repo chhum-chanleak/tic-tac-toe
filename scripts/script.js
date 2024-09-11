@@ -171,7 +171,7 @@ const board = (() => {
 
 // Game module pattern
 const game = (() => {
-
+  let numberOfTurns = 0;
   // Handle functions
   // Handle box
   const handleBox = (event) => {
