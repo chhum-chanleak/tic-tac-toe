@@ -115,8 +115,10 @@ ENDFUNCTION
 
 --->
 FUNCTION hasWon(direction):
+
   FOR each item in direction:
-    IF (direction[i]'s textContent = direction[i + 1]'s textContent AND direction[i + 1]'s textContent = direction[i]'s textContent), THEN RETURN true
+    IF item1 = item2 AND (item2 = item3),
+    THEN RETURN true
     ENDIF
   ENDFOR
   RETURN false
