@@ -189,6 +189,7 @@ const game = (() => {
           numberOfTurns += 1;
           player.togglePlayer1Status();
 
+          // Only check of winner when numberOfTurns is greater than or equal to 5.
           if (game.getNumberOfTurns() >= 5) {
             board.checkAllDirections(board.getDirectionsObject());
           }
@@ -200,7 +201,8 @@ const game = (() => {
           }`;
           numberOfTurns += 1;
           player.togglePlayer1Status();
-          
+
+          // Only check of winner when numberOfTurns is greater than or equal to 5.
           if (game.getNumberOfTurns() >= 5) {
             board.checkAllDirections(board.getDirectionsObject());
           }
@@ -254,10 +256,6 @@ const game = (() => {
     return false;
   };
 
-  const isFiveTurns = () => {
-    return (game.getNumberOfTurns() === 5);
-  };
-
   const getNumberOfTurns = () => numberOfTurns;
 
   // Make variables and/or functions public
@@ -266,7 +264,6 @@ const game = (() => {
     startGame,
     getNumberOfTurns,
     hasWon,
-    isFiveTurns,
   };
 })();
 
