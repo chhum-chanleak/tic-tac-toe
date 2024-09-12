@@ -243,7 +243,15 @@ const game = (() => {
     return false;
   };
 
-    // Check an array and return true when all array's item has the same values.
+  // Check for when the there's no winner when the value of numberOfTurns is 9
+  const isDraw = () => {
+    if (game.getNumberOfTurns() === 9 && board.checkAllDirections(board.getDirectionsObject()) === false) {
+      return true;
+    }
+    return false;
+  };
+
+  // Check an array and return true when all array's item has the same values.
   const hasWon = (contents) => { 
     for (let i = 0; i < contents.length; i += 1) {
       if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
@@ -278,6 +286,7 @@ const game = (() => {
     getNumberOfTurns,
     hasWon,
     removeEvent,
+    isDraw,
   };
 })();
 
