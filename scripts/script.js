@@ -296,7 +296,7 @@ const player = (() => {
     if (player === 'player1') {
       players.player1.score += 1;
     } else {
-      player.player2.score += 1 ;
+      players.player2.score += 1;
     }
   };    
 
