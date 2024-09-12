@@ -279,12 +279,22 @@ const player = (() => {
     return 'player2';
   };
 
+  const increaseScore = (player) => {
+    if (player === 'player1') {
+      players.player1.score += 1;
+    } else {
+      player.player2.score += 1 ;
+    }
+    console.log(players);
+  };    
+
   // Make variables and/or functions public
   return {
     players,
     getPlayer1Status,
     getCurrentPlayer,
     togglePlayer1Status,
+    increaseScore,
   };
 })();
 
