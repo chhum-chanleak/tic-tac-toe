@@ -123,18 +123,6 @@ const board = (() => {
     return contents;
   };
 
-  // Check an array and return true when all array's item has the same values.
-  const hasWon = (direction) => {
-    const contents = getTextContents(direction);
-
-    for (let i = 0; i < contents.length; i += 1) {
-      if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
-        return true;
-      }
-    }
-    return false;
-  };
-
   // Get all directions from board-game as an object
   const getDirectionsObject = () => {
     return directions = {
@@ -165,7 +153,6 @@ const board = (() => {
     getMainDiagonal,
     getOffDiagonal,
     getTextContents,
-    hasWon,
   };
 })();
 
@@ -221,6 +208,18 @@ const game = (() => {
     return false;
   };
 
+    // Check an array and return true when all array's item has the same values.
+    const hasWon = (direction) => {
+      const contents = board.getTextContents(direction);
+  
+      for (let i = 0; i < contents.length; i += 1) {
+        if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
+          return true;
+        }
+      }
+      return false;
+    };
+
   const getNumberOfTurns = () => numberOfTurns;
 
   // Make variables and/or functions public
@@ -228,6 +227,7 @@ const game = (() => {
     addEvent,
     startGame,
     getNumberOfTurns,
+    hasWon,
   };
 })();
 
