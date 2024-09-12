@@ -227,14 +227,22 @@ const game = (() => {
   };
 
     // Check an array and return true when all array's item has the same values.
-    const hasWon = (contents) => { 
-      for (let i = 0; i < contents.length; i += 1) {
-        if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
-          return true;
-        }
+  const hasWon = (contents) => { 
+    for (let i = 0; i < contents.length; i += 1) {
+      if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
+        if (contents[i][0] === 'X') {
+            console.log('Player1 wins');
+            player.increaseScore(`player1`);
+            return true;             
+          } else {
+            console.log('Player2 wins');
+            player.increaseScore(`player2`);
+            return true; 
+          }  
       }
-      return false;
-    };
+    }
+    return false;
+  };
 
   const getNumberOfTurns = () => numberOfTurns;
 
@@ -285,7 +293,6 @@ const player = (() => {
     } else {
       player.player2.score += 1 ;
     }
-    console.log(players);
   };    
 
   // Make variables and/or functions public
