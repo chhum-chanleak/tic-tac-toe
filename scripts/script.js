@@ -227,6 +227,13 @@ const game = (() => {
     }
   };
 
+  // Remove event from nodes
+  const removeEvent = (nodes) => {
+    for (let i = 0; i < nodes.length; i += 1) {
+      nodes[i].removeEventListener('click', handleBox);
+    }
+  };
+
   // Check to see if the box is empty
   const isEmpty = (event) => {
     if (event.target.textContent === '' && (event.target.textContent !== 'X' || event.target.textContent !== 'O')) {
@@ -262,6 +269,7 @@ const game = (() => {
     startGame,
     getNumberOfTurns,
     hasWon,
+    removeEvent,
   };
 })();
 
