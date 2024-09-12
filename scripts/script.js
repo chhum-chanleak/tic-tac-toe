@@ -185,7 +185,7 @@ const game = (() => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
-          event.target.textContent = `${player.players.player1.sign}`;
+          event.target.textContent = `${player.getPlayers().player1.sign}`;
           numberOfTurns += 1;
           player.togglePlayer1Status();
 
@@ -197,7 +197,7 @@ const game = (() => {
      } else {
         if (isEmpty(event)) {
           event.target.textContent = `${
-            player.players.player2.sign
+            player.getPlayers().player2.sign
           }`;
           numberOfTurns += 1;
           player.togglePlayer1Status();
