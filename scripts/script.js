@@ -181,7 +181,6 @@ const game = (() => {
   // Handle functions
   // Handle box
   const handleBox = (event) => {
-    console.log(game.getNumberOfTurns());
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
@@ -231,6 +230,7 @@ const game = (() => {
   // Check to see if the box is empty
   const isEmpty = (event) => {
     if (event.target.textContent === '' && (event.target.textContent !== 'X' || event.target.textContent !== 'O')) {
+      numberOfTurns += 1;
       return true;
     }
     return false;
