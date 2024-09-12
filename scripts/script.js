@@ -244,6 +244,10 @@ const game = (() => {
     return false;
   };
 
+  const isFiveTurns = () => {
+    return (game.getNumberOfTurns() === 5);
+  };
+
   const getNumberOfTurns = () => numberOfTurns;
 
   // Make variables and/or functions public
@@ -252,6 +256,7 @@ const game = (() => {
     startGame,
     getNumberOfTurns,
     hasWon,
+    isFiveTurns,
   };
 })();
 
