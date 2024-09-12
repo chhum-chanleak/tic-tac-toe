@@ -210,9 +210,7 @@ const game = (() => {
   };
 
     // Check an array and return true when all array's item has the same values.
-    const hasWon = (direction) => {
-      const contents = board.getTextContents(direction);
-  
+    const hasWon = (contents) => {  
       for (let i = 0; i < contents.length; i += 1) {
         if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
           return true;
