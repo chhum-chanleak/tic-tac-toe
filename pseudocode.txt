@@ -201,3 +201,19 @@ FUNCTION checkAllDirections(directions):
     PRINT item[prop]
 ENDFUNCTION
 ->
+
+->
+FUNCTION removeEvent(nodes):
+  FOR each item in nodes:
+    REMOVE event from item
+ENDFUNCTION
+<-
+
+->
+FUNCTION isDraw():
+  IF numberOfTurns = 9 AND ( checkAllDirections(getDirectionsObject()) = false) {
+    RETURN true
+  }
+  RETURN false
+ENDFUNCTION
+<-
