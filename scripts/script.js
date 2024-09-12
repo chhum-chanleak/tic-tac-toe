@@ -33,6 +33,17 @@ const board = (() => {
     return false;
   };
 
+  // Set color for X and O
+  const setColorForContents = () => {
+    for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
+      if (board.getBoxesFromBoard()[i].textContent === 'X') {
+        board.getBoxesFromBoard()[i].style.color = '#f00';
+      } else if (board.getBoxesFromBoard()[i].textContent === 'O') {
+        board.getBoxesFromBoard()[i].style.color = '#00f';
+      }
+    }
+  };
+
   const getEmptyBoard = () => emptyBoard;
 
   // Private method
@@ -172,6 +183,7 @@ const board = (() => {
     getTextContents,
     getDirectionsObject,
     checkAllDirections,
+    setColorForContents,
   };
 })();
 
