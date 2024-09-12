@@ -197,6 +197,7 @@ const game = (() => {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
           event.target.textContent = `${player.getPlayers().player1.sign}`;
+          board.setColorForContents();
           player.togglePlayer1Status();
 
           // Only check of winner when numberOfTurns is greater than or equal to 5.
@@ -209,6 +210,7 @@ const game = (() => {
           event.target.textContent = `${
             player.getPlayers().player2.sign
           }`;
+          board.setColorForContents();
           player.togglePlayer1Status();
 
           // Only check of winner when numberOfTurns is greater than or equal to 5.
