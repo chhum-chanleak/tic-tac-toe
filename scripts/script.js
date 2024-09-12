@@ -27,9 +27,8 @@ const board = (() => {
 
     for (let i = 0; i < contents.length; i += 1) {
       if (game.hasWon(contents[i])) {
-        console.log('true');
       }
-    }    
+    }
   };
 
   const getEmptyBoard = () => emptyBoard;
@@ -180,6 +179,7 @@ const game = (() => {
   // Handle functions
   // Handle box
   const handleBox = (event) => {
+    console.log(game.getNumberOfTurns());
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
@@ -234,7 +234,7 @@ const game = (() => {
             console.log('Player1 wins');
             player.increaseScore(`player1`);
             return true;             
-          } else {
+          } else if (contents[i][0] === 'O') {
             console.log('Player2 wins');
             player.increaseScore(`player2`);
             return true; 
