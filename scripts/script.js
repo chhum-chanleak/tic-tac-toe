@@ -309,7 +309,6 @@ const player = (() => {
 
   // Make variables and/or functions public
   return {
-    players,
     getPlayer1Status,
     getCurrentPlayer,
     togglePlayer1Status,
