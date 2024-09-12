@@ -126,20 +126,20 @@ const board = (() => {
   // Get all directions from board-game as an object
   const getDirectionsObject = () => {
     return directions = {
-      rows: {
-        1: getRows().row1,
-        2: getRows().row2,
-        3: getRows().row3,
-      },
-      columns: {
-        1: getColumns().column1,
-        2: getColumns().column2,
-        3: getColumns().column3,
-      },
-      diagonals: {
-        main: getMainDiagonal(),
-        off: getOffDiagonal(),
-      }
+      rows: [
+        board.getTextContents(getRows().row1),
+        board.getTextContents(getRows().row2),
+        board.getTextContents(getRows().row3)
+      ],
+      columns: [
+        board.getTextContents(getColumns().column1),
+        board.getTextContents(getColumns().column2),
+        board.getTextContents(getColumns().column3),
+      ],
+      diagonals: [
+       getTextContents(getMainDiagonal()),
+       getTextContents(getOffDiagonal()),
+      ]
     };
   };
 
