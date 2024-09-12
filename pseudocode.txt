@@ -217,3 +217,14 @@ FUNCTION isDraw():
   RETURN false
 ENDFUNCTION
 <-
+
+<-
+FUNCTION setColorForContent():
+  FOR each item in getBoxesFromBoard():
+    IF item's content = 'X', THEN
+      item's color = red
+    ELSEIF item's content = 'O', THEN
+      item's color = blue
+    END
+ENDFUNCTION
+->
