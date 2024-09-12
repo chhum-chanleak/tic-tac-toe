@@ -227,6 +227,7 @@ const game = (() => {
   return {
     addEvent,
     startGame,
+    getNumberOfTurns,
   };
 })();
 
