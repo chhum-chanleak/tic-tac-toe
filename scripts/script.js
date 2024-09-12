@@ -284,6 +284,8 @@ const player = (() => {
 
   const getPlayer1Status = () => isPlayer1;
 
+  const getPlayers = () => players;
+
   const togglePlayer1Status = () => {
     if (isPlayer1) {
       isPlayer1 = false;
@@ -313,6 +315,7 @@ const player = (() => {
     getCurrentPlayer,
     togglePlayer1Status,
     increaseScore,
+    getPlayers,
   };
 })();
 
