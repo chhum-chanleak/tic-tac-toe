@@ -22,7 +22,6 @@ const board = (() => {
 
     // Put textContents to contents
     for (const prop in directionsObj) {
-      console.log(...directionsObj[prop]);
       contents.push(...directionsObj[prop]);
     }
 
@@ -184,18 +183,18 @@ const game = (() => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
       if (player.getPlayer1Status()) {
         if (isEmpty(event)) {
-            event.target.textContent = `${player.players.player1.sign}`;
-            numberOfTurns += 1;
-            player.togglePlayer1Status();
-          }
+          event.target.textContent = `${player.players.player1.sign}`;
+          numberOfTurns += 1;
+          player.togglePlayer1Status();
+        }
      } else {
         if (isEmpty(event)) {
-            event.target.textContent = `${
-              player.players.player2.sign
-            }`;
-            numberOfTurns += 1;
-            player.togglePlayer1Status();
-          }
+          event.target.textContent = `${
+            player.players.player2.sign
+          }`;
+          numberOfTurns += 1;
+          player.togglePlayer1Status();
+        }
       }
     }
   };
@@ -273,10 +272,18 @@ const player = (() => {
     }
   };
 
+  const getCurrentPlayer = () => {
+    if (isPlayer1) {
+      return `player1`;
+    }
+    return 'player2';
+  };
+
   // Make variables and/or functions public
   return {
     players,
     getPlayer1Status,
+    getCurrentPlayer,
     togglePlayer1Status,
   };
 })();
