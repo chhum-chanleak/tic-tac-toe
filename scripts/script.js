@@ -27,8 +27,10 @@ const board = (() => {
 
     for (let i = 0; i < contents.length; i += 1) {
       if (game.hasWon(contents[i])) {
+        return true;
       }
     }
+    return false;
   };
 
   const getEmptyBoard = () => emptyBoard;
