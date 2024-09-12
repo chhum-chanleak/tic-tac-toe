@@ -153,6 +153,7 @@ const board = (() => {
     getMainDiagonal,
     getOffDiagonal,
     getTextContents,
+    getDirectionsObject,
   };
 })();
 
