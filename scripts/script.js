@@ -188,6 +188,10 @@ const game = (() => {
           event.target.textContent = `${player.players.player1.sign}`;
           numberOfTurns += 1;
           player.togglePlayer1Status();
+
+          if (game.getNumberOfTurns() >= 5) {
+            board.checkAllDirections(board.getDirectionsObject());
+          }
         }
      } else {
         if (isEmpty(event)) {
@@ -196,6 +200,10 @@ const game = (() => {
           }`;
           numberOfTurns += 1;
           player.togglePlayer1Status();
+          
+          if (game.getNumberOfTurns() >= 5) {
+            board.checkAllDirections(board.getDirectionsObject());
+          }
         }
       }
     }
