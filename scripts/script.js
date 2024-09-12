@@ -16,6 +16,23 @@ const board = (() => {
     }
   };
 
+  // check all directions in the board for winner
+  const checkAllDirections = (directionsObj) => {
+    let contents = [];
+
+    // Put textContents to contents
+    for (const prop in directionsObj) {
+      console.log(...directionsObj[prop]);
+      contents.push(...directionsObj[prop]);
+    }
+
+    for (let i = 0; i < contents.length; i += 1) {
+      if (game.hasWon(contents[i])) {
+        console.log('true');
+      }
+    }    
+  };
+
   const getEmptyBoard = () => emptyBoard;
 
   // Private method
@@ -154,6 +171,7 @@ const board = (() => {
     getOffDiagonal,
     getTextContents,
     getDirectionsObject,
+    checkAllDirections,
   };
 })();
 
@@ -210,7 +228,7 @@ const game = (() => {
   };
 
     // Check an array and return true when all array's item has the same values.
-    const hasWon = (contents) => {  
+    const hasWon = (contents) => { 
       for (let i = 0; i < contents.length; i += 1) {
         if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
           return true;
