@@ -250,10 +250,18 @@ const game = (() => {
         if (contents[i][0] === 'X') {
             console.log('Player1 wins');
             player.increaseScore(`player1`);
+
+            // Remove event(stop the game) from each box of the board when the game is won.
+            game.removeEvent(board.getBoxesFromBoard());
+
             return true;             
           } else if (contents[i][0] === 'O') {
             console.log('Player2 wins');
             player.increaseScore(`player2`);
+
+            // Remove event(stop the game) from each box of the board when the game is won.
+            game.removeEvent(board.getBoxesFromBoard());
+
             return true; 
           }  
       }
