@@ -236,3 +236,9 @@ FUNCTION showPlayersTurn():
   SET turn's textContent = getCurrentPlayer()
 ENDFUNCTION
 <-
+
+<-
+FUNCTION getWinner():
+  RETURN winner;
+ENDFUNCTION
+->
