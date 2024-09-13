@@ -1,6 +1,7 @@
 // Module pattern for board
 const board = (() => {
   const emptyBoard = document.createElement('div');
+  let winningDirection = '';
 
   //  Create an empty board for new game
   const createEmptyBoard = () => {    
