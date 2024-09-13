@@ -382,10 +382,12 @@ const player = (() => {
 
       if (game.getWinner() === 'Winner is player1.') {
         player.increaseScore('player1');
+        game.setGameState('The game has ended.');
         turn.style.color = '#f00';
         console.log(game.getWinner());
       } else {
         player.increaseScore('player2');
+        game.setGameState('The game has ended.');
         turn.style.color = '#00f';
         console.log(game.getWinner());
       }
