@@ -302,6 +302,8 @@ const game = (() => {
 
   const getWinner = () => winner;
 
+  const getGameState = () => gameState;
+
   const setGameState = (state) => {
     gameState = state;
   };
@@ -316,6 +318,7 @@ const game = (() => {
     isDraw,
     getWinner,
     setGameState,
+    getGameState,
   };
 })();
 
