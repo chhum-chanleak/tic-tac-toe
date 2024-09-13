@@ -173,11 +173,23 @@ const board = (() => {
   
   const getDirectionClasses = (direction) => {
     let classes = [];
-    console.log(direction.keys());
+
     for (let i = 0; i < direction.length; i += 1) {
       classes.push(direction[i].getAttribute('class'));
     }
     return classes;
+  };
+
+  // Take a parameter and return true if it is winning direction
+  const isWinningDirection = (direction, directionName) => {
+    for (let i = 0; i < direction.length; i += 1) {
+      if ((direction[i].textContent === direction[i + 1].textContent) && (direction[i + 1].textContent === direction[i + 2].textContent)) {
+        console.log(directionName);
+        return true;
+      } else {
+        return false;
+      }
+    }
   };
 
   // Make variables and/or functions public
@@ -194,6 +206,7 @@ const board = (() => {
     checkAllDirections,
     setColorForContents,
     getDirectionClasses,
+    isWinningDirection,
   };
 })();
 
