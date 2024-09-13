@@ -242,6 +242,7 @@ const board = (() => {
     getDirectionClasses,
     isWinningDirection,
     checkForWinningDirection,
+    getWinningDirection,
   };
 })();
 
