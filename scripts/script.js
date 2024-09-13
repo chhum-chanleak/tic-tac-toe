@@ -181,7 +181,7 @@ const board = (() => {
     return classes;
   };
 
-  // Take a parameter and return true if it is winning direction
+  // Take two parameters and return true if it is winning direction
   const isWinningDirection = (direction, directionName) => {
     for (let i = 0; i < direction.length; i += 1) {
       if ((direction[i].textContent === direction[i + 1].textContent) && (direction[i + 1].textContent === direction[i + 2].textContent)) {
@@ -194,6 +194,37 @@ const board = (() => {
   };
 
   const getWinningDirection = () => winningDirection;
+
+  const checkForWinningDirection = () => {
+    for (let i = 0; i < 8; i += 1) {
+      switch (i) {
+        case 0: isWinningDirection(getRows().row1, 'row1');
+          winningDirection = 'row1';
+          break;
+        case 1: isWinningDirection(getRows().row2, 'row2');
+          winningDirection = 'row2';
+          break;
+        case 2: isWinningDirection(getRows().row1, 'row3');
+          winningDirection = 'row3';
+          break;
+        case 3: isWinningDirection(getColumns().column1, 'column1');
+          winningDirection = 'column1';
+          break;
+        case 4: isWinningDirection(getColumns().column2, 'column2');
+          winningDirection = 'column2';
+          break;
+        case 5: isWinningDirection(getColumns().column3, 'column3');
+          winningDirection = 'column3';
+          break;
+        case 6: isWinningDirection(getMainDiagonal(), 'mainDiagonal');
+          winningDirection = 'mainDiagonal';
+          break;
+        case 7: isWinningDirection(getOffDiagonal(), 'offDiagonal');
+          winningDirection = 'offDiagonal';
+          break;
+      }
+    }
+  };
 
   // Make variables and/or functions public
   return {
@@ -210,7 +241,7 @@ const board = (() => {
     setColorForContents,
     getDirectionClasses,
     isWinningDirection,
-    getWinningDirection,
+    checkForWinningDirection,
   };
 })();
 
