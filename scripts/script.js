@@ -369,9 +369,11 @@ const player = (() => {
       turn.textContent = `${game.getWinner()}`;
 
       if (game.getWinner() === 'Winner is player1.') {
+        player.increaseScore('player1');
         turn.style.color = '#f00';
         console.log(game.getWinner());
       } else {
+        player.increaseScore('player2');
         turn.style.color = '#00f';
         console.log(game.getWinner());
       }
