@@ -275,7 +275,6 @@ const game = (() => {
     for (let i = 0; i < contents.length; i += 1) {
       if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
         if (contents[i][0] === 'X') {
-            console.log('Player1 wins.');
             winner = 'Winner is player1.';
             player.increaseScore(`player1`);
 
@@ -284,7 +283,6 @@ const game = (() => {
 
             return true;             
           } else if (contents[i][0] === 'O') {
-            console.log('Player2 wins.');
             winner = 'Winner is player2.';
             player.increaseScore(`player2`);
 
