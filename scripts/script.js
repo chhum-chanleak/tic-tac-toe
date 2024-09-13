@@ -299,6 +299,8 @@ const game = (() => {
 
   const getNumberOfTurns = () => numberOfTurns;
 
+  const getWinner = () => winner;
+
   // Make variables and/or functions public
   return {
     addEvent,
@@ -307,6 +309,7 @@ const game = (() => {
     hasWon,
     removeEvent,
     isDraw,
+    getWinner,
   };
 })();
 
