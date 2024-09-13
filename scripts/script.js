@@ -302,6 +302,10 @@ const game = (() => {
 
   const getWinner = () => winner;
 
+  const setGameState = (state) => {
+    gameState = state;
+  };
+
   // Make variables and/or functions public
   return {
     addEvent,
@@ -311,6 +315,7 @@ const game = (() => {
     removeEvent,
     isDraw,
     getWinner,
+    setGameState,
   };
 })();
 
