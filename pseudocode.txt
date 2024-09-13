@@ -242,3 +242,13 @@ FUNCTION getWinner():
   RETURN winner;
 ENDFUNCTION
 ->
+
+->
+FUNCTION showPlayersScore():
+  INIT player1Score = span.player1
+  INIT player2Score = span.player2
+
+  SET player1Score's textContent = player1' score;
+  SET player2Score's textContent = player2's score;
+ENDFUNCTION
+<-
