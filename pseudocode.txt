@@ -228,3 +228,11 @@ FUNCTION setColorForContent():
     END
 ENDFUNCTION
 ->
+
+->
+FUNCTION showPlayersTurn():
+  INIT turn = .players-turn
+
+  SET turn's textContent = getCurrentPlayer()
+ENDFUNCTION
+<-
