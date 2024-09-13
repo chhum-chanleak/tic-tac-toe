@@ -227,6 +227,7 @@ const game = (() => {
     board.createEmptyBoard();
     game.addEvent(board.getBoxesFromBoard());
     document.body.appendChild(board.getEmptyBoard());
+    player.showPlayersTurn();
   };
 
   // ADD event to document's object that fires handleDOMContentLoaded
