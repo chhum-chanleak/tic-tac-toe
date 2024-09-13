@@ -193,6 +193,8 @@ const board = (() => {
     }
   };
 
+  const getWinningDirection = () => winningDirection;
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -208,6 +210,7 @@ const board = (() => {
     setColorForContents,
     getDirectionClasses,
     isWinningDirection,
+    getWinningDirection,
   };
 })();
 
