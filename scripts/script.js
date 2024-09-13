@@ -355,6 +355,10 @@ const player = (() => {
   const showPlayersTurn = () => {
     const turn = document.querySelector('.players-turn');
 
+    if (board.checkAllDirections(board.getDirectionsObject())) {
+      turn.textContent = `${winner}`;
+    }
+
     turn.textContent = `${getCurrentPlayer()}`;
   };
 
