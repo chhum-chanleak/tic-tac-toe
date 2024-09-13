@@ -390,6 +390,22 @@ const player = (() => {
     }    
   };
 
+    // Show each player's score on page
+    const showPlayersScore = () => {
+      const player1Score = document.querySelector('span.player1');
+      const player2Score = document.querySelector('span.player2');
+      const player1Span = document.createElement('span');
+      const player2Span = document.createElement('span');
+  
+      player1Span.textContent = ` ${player.getPlayers().player1.score}`;
+      player2Span.textContent = ` ${player.getPlayers().player2.score}`;
+      player1Span.setAttribute('class', 'score');
+      player2Span.setAttribute('class', 'score');
+  
+      player1Score.insertAdjacentElement("beforeend", player1Span);
+      player2Score.insertAdjacentElement("beforeend", player2Span);
+    };
+
   // Make variables and/or functions public
   return {
     getPlayer1Status,
@@ -398,6 +414,7 @@ const player = (() => {
     increaseScore,
     getPlayers,
     showPlayersTurn,
+    showPlayersScore,
   };
 })();
 
