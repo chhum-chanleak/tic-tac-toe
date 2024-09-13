@@ -191,6 +191,7 @@ const board = (() => {
 const game = (() => {
   let numberOfTurns = 0;
   let winner = '';
+  let gameState = 'The game is on going.';
 
   // Handle functions
   // Handle box
