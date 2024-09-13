@@ -398,7 +398,7 @@ const player = (() => {
     };
 
     // Stop displaying score
-    const stopDisplayingScore = () => {
+    const updatePlayersScore = () => {
       const player1Score = document.querySelector('span.player1 > span.score');
       const player2Score = document.querySelector('span.player2 > span.score');
 
@@ -415,7 +415,7 @@ const player = (() => {
     getPlayers,
     showPlayersTurn,
     showPlayersScore,
-    stopDisplayingScore,
+    updatePlayersScore,
   };
 })();
 
