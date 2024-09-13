@@ -24,7 +24,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 10%;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .board-game {
