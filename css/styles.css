@@ -29,6 +29,19 @@ body {
   gap: 4rem;
 }
 
+.info {
+  background: #0004;
+  width: 80%;
+  padding: var(--spacing-padding);
+
+  & .row.score {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.2rem;
+  }
+}
+
 .board-game {
   height: 40vh;
   width: 40vw;
