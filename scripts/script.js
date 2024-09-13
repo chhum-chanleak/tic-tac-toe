@@ -170,6 +170,15 @@ const board = (() => {
       ]
     };
   };
+  
+  const getDirectionClasses = (direction) => {
+    let classes = [];
+    console.log(direction.keys());
+    for (let i = 0; i < direction.length; i += 1) {
+      classes.push(direction[i].getAttribute('class'));
+    }
+    return classes;
+  };
 
   // Make variables and/or functions public
   return {
@@ -184,6 +193,7 @@ const board = (() => {
     getDirectionsObject,
     checkAllDirections,
     setColorForContents,
+    getDirectionClasses,
   };
 })();
 
