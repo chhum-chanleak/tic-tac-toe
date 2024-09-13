@@ -404,6 +404,7 @@ const player = (() => {
 
       player1Score.remove();
       player2Score.remove();
+      showPlayersScore();
     };
 
   // Make variables and/or functions public
