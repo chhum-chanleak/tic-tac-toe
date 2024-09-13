@@ -359,8 +359,17 @@ const player = (() => {
 
     turn.textContent = `${getCurrentPlayer()}`;
 
+    // Show the winner instead players' turn when the game is won.
     if (board.checkAllDirections(board.getDirectionsObject())) {
       turn.textContent = `${game.getWinner()}`;
+
+      if (game.getWinner() === 'Winner is player1.') {
+        turn.style.color = '#f00';
+        console.log(game.getWinner());
+      } else {
+        turn.style.color = '#00f';
+        console.log(game.getWinner());
+      }
     }    
   };
 
