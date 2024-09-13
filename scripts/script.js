@@ -171,6 +171,15 @@ const board = (() => {
     };
   };
 
+  // Pass a parent node and have its children nodes removed.
+  const removeChildNode = (parent, child) => {
+    for (let i = 0; i < parent.children.length; i += 1) {
+      if (parent.children[i] === child) {
+        parent.children[i].remove();
+      }
+    }
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -184,6 +193,7 @@ const board = (() => {
     getDirectionsObject,
     checkAllDirections,
     setColorForContents,
+    removeChildNode,
   };
 })();
 
