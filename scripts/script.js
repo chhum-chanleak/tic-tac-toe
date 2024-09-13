@@ -397,6 +397,15 @@ const player = (() => {
       player2Score.insertAdjacentElement("beforeend", player2Span);
     };
 
+    // Stop displaying score
+    const stopDisplayingScore = () => {
+      const player1Score = document.querySelector('span.player1 > span.score');
+      const player2Score = document.querySelector('span.player2 > span.score');
+
+      player1Score.remove();
+      player2Score.remove();
+    };
+
   // Make variables and/or functions public
   return {
     getPlayer1Status,
@@ -406,6 +415,7 @@ const player = (() => {
     getPlayers,
     showPlayersTurn,
     showPlayersScore,
+    stopDisplayingScore,
   };
 })();
 
