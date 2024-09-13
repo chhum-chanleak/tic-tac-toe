@@ -344,7 +344,13 @@ const player = (() => {
     } else {
       players.player2.score += 1;
     }
-  };    
+  };
+  
+  const showPlayersTurn = () => {
+    const turn = document.querySelector('.players-turn');
+
+    turn.textContent = `${getCurrentPlayer()}`;
+  };
 
   // Make variables and/or functions public
   return {
@@ -353,6 +359,7 @@ const player = (() => {
     togglePlayer1Status,
     increaseScore,
     getPlayers,
+    showPlayersTurn,
   };
 })();
 
