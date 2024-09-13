@@ -357,10 +357,17 @@ const player = (() => {
   const showPlayersTurn = () => {
     const turn = document.querySelector('.players-turn');
 
-    turn.textContent = `${getCurrentPlayer()}`;
+    turn.textContent = `${getCurrentPlayer()}'s turn.`;
+
+    if (turn.textContent === "player1's turn.") {
+      turn.style.color = '#f00';
+    } else {
+      turn.style.color = '#00f';
+    }
 
     // Show the winner instead players' turn when the game is won.
     if (board.checkAllDirections(board.getDirectionsObject())) {
+
       turn.textContent = `${game.getWinner()}`;
 
       if (game.getWinner() === 'Winner is player1.') {
