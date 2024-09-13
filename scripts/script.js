@@ -277,6 +277,7 @@ const game = (() => {
       if (contents[i] === contents[i + 1] && contents[i + 1] === contents[i + 2]) {
         if (contents[i][0] === 'X') {
             winner = 'Winner is player1.';
+            player.updatePlayersScore();
 
             // Remove event(stop the game) from each box of the board when the game is won.
             game.removeEvent(board.getBoxesFromBoard());
@@ -284,6 +285,7 @@ const game = (() => {
             return true;             
           } else if (contents[i][0] === 'O') {
             winner = 'Winner is player2.';
+            player.updatePlayersScore();
 
             // Remove event(stop the game) from each box of the board when the game is won.
             game.removeEvent(board.getBoxesFromBoard());
