@@ -191,6 +191,7 @@ const board = (() => {
 const game = (() => {
   let numberOfTurns = 0;
   let winner = '';
+
   // Handle functions
   // Handle box
   const handleBox = (event) => {
@@ -358,11 +359,11 @@ const player = (() => {
   const showPlayersTurn = () => {
     const turn = document.querySelector('.players-turn');
 
-    if (board.checkAllDirections(board.getDirectionsObject())) {
-      turn.textContent = `${winner}`;
-    }
-
     turn.textContent = `${getCurrentPlayer()}`;
+
+    if (board.checkAllDirections(board.getDirectionsObject())) {
+      turn.textContent = `${game.getWinner()}`;
+    }    
   };
 
   // Make variables and/or functions public
