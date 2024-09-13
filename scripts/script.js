@@ -392,6 +392,8 @@ const player = (() => {
   
       player1Span.textContent = ` ${player.getPlayers().player1.score}`;
       player2Span.textContent = ` ${player.getPlayers().player2.score}`;
+      player1Span.style.color = '#f00';
+      player2Span.style.color = '#00f';
       player1Span.setAttribute('class', 'score');
       player2Span.setAttribute('class', 'score');
   
