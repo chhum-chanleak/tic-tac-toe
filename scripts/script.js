@@ -298,6 +298,16 @@ const board = (() => {
     document.body.appendChild(button);    
   };
 
+  // Empty each child of .board-game
+  const emptyBoardGame = () => {
+    const boardGame = document.querySelector('.board-game');
+
+    for (let i = 0; i < boardGame.children.length; i += 1) {
+      boardGame.children[i].remove();
+      i -= 1;
+    }
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -320,6 +330,7 @@ const board = (() => {
     getDirectionByName,
     isMixed,
     createNewGameButton,
+    emptyBoardGame,
   };
 })();
 
