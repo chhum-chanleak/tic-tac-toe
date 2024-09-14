@@ -307,6 +307,7 @@ const board = (() => {
     game.addEvent(board.getBoxesFromBoard());
     document.body.appendChild(board.getEmptyBoard());
     player.showPlayersTurn();
+    removeNewGameButton();
   }
 
   const removeNewGameButton = () => {
