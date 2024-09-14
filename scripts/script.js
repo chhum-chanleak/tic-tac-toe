@@ -319,6 +319,10 @@ const board = (() => {
     }
   };
 
+  const setWinningDirection = (state) => {
+    winningDirection = state;
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -342,6 +346,7 @@ const board = (() => {
     isMixed,
     createNewGameButton,
     emptyBoardGame,
+    setWinningDirection,
   };
 })();
 
