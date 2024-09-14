@@ -196,9 +196,14 @@ const board = (() => {
 
   // Pass in a direction and have its color set.
   const setBgColorForDirection = (direction) => {
+    const content = direction[0].textContent;
 
     for (let i = 0; i < direction.length; i += 1) {
-      direction[i].style.backgroundColor = '#f004';
+      if (content === 'X') {
+        direction[i].style.backgroundColor = '#f004';
+      } else if (content === 'O') {
+        direction[i].style.backgroundColor = '#00f4';
+      }      
     }
   };
 
