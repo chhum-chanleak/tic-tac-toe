@@ -276,7 +276,7 @@ const game = (() => {
           board.setColorForContents();
           player.togglePlayer1Status();
           player.showPlayersTurn();
-
+          
           // Only check of winner when numberOfTurns is greater than or equal to 5.
           if (game.getNumberOfTurns() >= 5) {
             board.checkAllDirections(board.getDirectionsObject());
@@ -330,6 +330,13 @@ const game = (() => {
     }
     return false;
   };
+
+  // Change gameState when the game is draw
+  const handleDraw = () => {
+    if (numberOfTurns === 9 && isDraw()) {
+      game.setGameState('The game has ended.');
+    }
+  };
   
   // Check an array and return true when all array's item has the same values.
   const hasWon = (contents) => { 
@@ -378,6 +385,7 @@ const game = (() => {
     getWinner,
     setGameState,
     getGameState,
+    handleDraw,
   };
 })();
 
