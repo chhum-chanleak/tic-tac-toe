@@ -234,6 +234,16 @@ const board = (() => {
     }
   };
 
+  // Return true when at least one textContent is empty
+  const isIncomplete = (direction) => {
+    for (let i = 0; i < direction.length; i += 1) {
+      if (direction[i].textContent === '') {
+        return true;
+      }
+    }
+    return false;
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -252,6 +262,7 @@ const board = (() => {
     checkForWinningDirection,
     getWinningDirection,
     setColorForDirection,
+    isIncomplete,
   };
 })();
 
