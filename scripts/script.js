@@ -501,6 +501,15 @@ const game = (() => {
     player.setIsPlayer1(true);
   };
 
+  // Decide the winner who gets 3 points first.
+  const decideWinner = () => {
+    const p = document.createElement('p');
+    if (player.getPlayers().player1.score === 3 || player.getPlayers().player2.score === 3) {
+      p.textContent = `Congratulations! ${getWinner()}`;
+      document.body.appendChild(p);
+    }
+  };
+
   // Make variables and/or functions public
   return {
     addEvent,
@@ -514,6 +523,7 @@ const game = (() => {
     getGameState,
     handleDraw,
     resetGame,
+    decideWinner,
   };
 })();
 
