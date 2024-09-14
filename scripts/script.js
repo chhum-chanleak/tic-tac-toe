@@ -223,49 +223,50 @@ const board = (() => {
           if (!isIncomplete(getRows().row1)) {
             isWinningDirection(getRows().row1, 'row1');
             winningDirection = 'row1';
+            return getWinningDirection();
           }          
-          break;
         case 1: 
           if (!isIncomplete(getRows().row2)) {
             isWinningDirection(getRows().row2, 'row2');
             winningDirection = 'row2';
+            return getWinningDirection();
           }
-          break;
         case 2:
           if (!isIncomplete(getRows().row3)) {
             isWinningDirection(getRows().row3, 'row3');
             winningDirection = 'row3';
+            return getWinningDirection();
           } 
-          break;
         case 3: 
           if (!isIncomplete(getColumns().column1)) {
             isWinningDirection(getColumns().column1, 'column1');
             winningDirection = 'column1';
+            return getWinningDirection();
           }
-          break;
         case 4:
           if (!isIncomplete(getColumns().column2)) {
             isWinningDirection(getColumns().column2, 'column2');
             winningDirection = 'column2';
+            return getWinningDirection();
           }
-          break;
         case 5: 
           if (!isIncomplete(getColumns().column3)) {
             isWinningDirection(getColumns().column3, 'column3');
             winningDirection = 'column3';
+            return getWinningDirection();
           }
         case 6:
           if (!isIncomplete(getMainDiagonal())) {
             isWinningDirection(getMainDiagonal(), 'mainDiagonal');
             winningDirection = 'mainDiagonal';
+            return getWinningDirection();
           }         
-          break;
         case 7: 
           if (!isIncomplete(getOffDiagonal())) {
             isWinningDirection(getOffDiagonal(), 'offDiagonal');
             winningDirection = 'offDiagonal';
+            return getWinningDirection();
           }        
-          break;
       }
     }
   };
