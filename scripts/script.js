@@ -588,6 +588,7 @@ const player = (() => {
       if (game.getWinner() === 'The winner is player1.') {
         // End-game function calls
         player.increaseScore('player1');
+        game.decideWinner();
         game.setGameState('The game has ended.');
         turn.style.color = '#f00';
         console.log(game.getWinner());
@@ -597,6 +598,7 @@ const player = (() => {
       else if (game.getWinner() === 'The winner is player2.'){
         // End-game function calls
         player.increaseScore('player2');
+        game.decideWinner();
         game.setGameState('The game has ended.');
         turn.style.color = '#00f';
         console.log(game.getWinner());
