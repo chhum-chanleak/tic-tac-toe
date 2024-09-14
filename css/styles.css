@@ -30,9 +30,10 @@ body {
 }
 
 .info {
-  background: #0004;
+  background: #0002;
   width: 80%;
   padding: var(--spacing-padding);
+  border-radius: var(--border-radius);
 
   & .row.score {
     display: flex;
