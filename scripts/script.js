@@ -289,6 +289,15 @@ const board = (() => {
     return true;
   };
 
+  // Create a new game button
+  const createNewGameButton = () => {
+    const button = document.createElement('button');
+
+    button.setAttribute('class', 'btn new-game');
+    button.textContent = 'NEW GAME';
+    document.body.appendChild(button);    
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -310,6 +319,7 @@ const board = (() => {
     isIncomplete,
     getDirectionByName,
     isMixed,
+    createNewGameButton,
   };
 })();
 
