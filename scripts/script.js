@@ -295,6 +295,7 @@ const board = (() => {
 
     button.setAttribute('class', 'btn new-game');
     button.textContent = 'NEW GAME';
+    button.addEventListener('click', handleNewGameButton);
     document.body.appendChild(button);    
   };
 
