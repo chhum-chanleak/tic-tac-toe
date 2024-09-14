@@ -281,6 +281,21 @@ const board = (() => {
     return false;
   };
 
+  // Return true when textContents of the direction are not the same
+  const isMixed = (direction) => {
+    const contents = getTextContents(direction);
+
+    for (let i = 0; i < contents.length; i += 1) {
+      if (contents[i] === contents[i + 1] && (contents[i] === contents[i + 2])) {
+        // If it is entirely empty, then it also return false.
+        if (!isIncomplete(direction)) {
+          return false;
+        }        
+      }
+    }
+    return true;
+  };
+
   // Make variables and/or functions public
   return {
     getEmptyBoard,
@@ -301,6 +316,7 @@ const board = (() => {
     setBgColorForDirection,
     isIncomplete,
     getDirectionByName,
+    isMixed,
   };
 })();
 
