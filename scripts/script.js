@@ -307,7 +307,6 @@ const board = (() => {
     game.addEvent(board.getBoxesFromBoard());
     document.body.appendChild(board.getEmptyBoard());
     player.showPlayersTurn();
-    player.showPlayersScore();
   }
 
   // Empty each child of .board-game
