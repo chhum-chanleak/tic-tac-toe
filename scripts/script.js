@@ -356,7 +356,6 @@ const game = (() => {
   let winner = '';
   let gameState = 'The game is on going.';
 
-  // Handle functions
   // Handle box
   const handleBox = (event) => {
     for (let i = 0; i < board.getBoxesFromBoard().length; i += 1) {
@@ -569,6 +568,7 @@ const player = (() => {
       turn.textContent = `${game.getWinner()}`;
 
       if (game.getWinner() === 'Winner is player1.') {
+        // End-game function calls
         player.increaseScore('player1');
         game.setGameState('The game has ended.');
         turn.style.color = '#f00';
@@ -576,6 +576,7 @@ const player = (() => {
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
       } 
       else {
+        // End-game function calls
         player.increaseScore('player2');
         game.setGameState('The game has ended.');
         turn.style.color = '#00f';
