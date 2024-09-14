@@ -521,11 +521,14 @@ const player = (() => {
         game.setGameState('The game has ended.');
         turn.style.color = '#f00';
         console.log(game.getWinner());
-      } else {
+        board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
+      } 
+      else {
         player.increaseScore('player2');
         game.setGameState('The game has ended.');
         turn.style.color = '#00f';
         console.log(game.getWinner());
+        board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
       }
     }    
   };
