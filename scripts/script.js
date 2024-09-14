@@ -298,6 +298,16 @@ const board = (() => {
     document.body.appendChild(button);    
   };
 
+  const handleNewGameButton = () => {
+
+    emptyBoardGame();
+    board.createEmptyBoard();
+    game.addEvent(board.getBoxesFromBoard());
+    document.body.appendChild(board.getEmptyBoard());
+    player.showPlayersTurn();
+    player.showPlayersScore();
+  }
+
   // Empty each child of .board-game
   const emptyBoardGame = () => {
     const boardGame = document.querySelector('.board-game');
