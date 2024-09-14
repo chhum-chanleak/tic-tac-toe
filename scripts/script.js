@@ -182,7 +182,7 @@ const board = (() => {
   };
 
   // Pass in a direction and have its color set.
-  const setColorForDirection = (direction) => {
+  const setBgColorForDirection = (direction) => {
 
     for (let i = 0; i < direction.length; i += 1) {
       direction[i].style.backgroundColor = '#f004';
@@ -284,7 +284,7 @@ const board = (() => {
     isWinningDirection,
     checkForWinningDirection,
     getWinningDirection,
-    setColorForDirection,
+    setBgColorForDirection,
     isIncomplete,
   };
 })();
