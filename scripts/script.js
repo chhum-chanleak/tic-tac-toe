@@ -603,6 +603,10 @@ const player = (() => {
       showPlayersScore();
     };
 
+    const setIsPlayer1 = (state) => {
+      isPlayer1 = state;
+    };
+
   // Make variables and/or functions public
   return {
     getPlayer1Status,
@@ -613,6 +617,7 @@ const player = (() => {
     showPlayersTurn,
     showPlayersScore,
     updatePlayersScore,
+    setIsPlayer1,
   };
 })();
 
