@@ -574,6 +574,7 @@ const player = (() => {
         turn.style.color = '#f00';
         console.log(game.getWinner());
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
+        board.createNewGameButton();
       } 
       else {
         // End-game function calls
@@ -582,6 +583,7 @@ const player = (() => {
         turn.style.color = '#00f';
         console.log(game.getWinner());
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
+        board.createNewGameButton();
       }
     }    
   };
