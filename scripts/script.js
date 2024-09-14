@@ -216,53 +216,45 @@ const board = (() => {
     for (let i = 0; i < 8; i += 1) {
       switch (i) {
         case 0: 
-          if (!isIncomplete(getRows().row1)) {
-            isWinningDirection(getRows().row1, 'row1');
+          if (isWinningDirection(getRows().row1)) {
             winningDirection = 'row1';
             return getWinningDirection();
           }          
         case 1: 
-          if (!isIncomplete(getRows().row2)) {
-            isWinningDirection(getRows().row2, 'row2');
+          if (isWinningDirection(getRows().row2)) {
             winningDirection = 'row2';
             return getWinningDirection();
-          }
+          } 
         case 2:
-          if (!isIncomplete(getRows().row3)) {
-            isWinningDirection(getRows().row3, 'row3');
+          if (isWinningDirection(getRows().row3)) {
             winningDirection = 'row3';
             return getWinningDirection();
           } 
         case 3: 
-          if (!isIncomplete(getColumns().column1)) {
-            isWinningDirection(getColumns().column1, 'column1');
+          if (isWinningDirection(getColumns().column1)) {
             winningDirection = 'column1';
             return getWinningDirection();
-          }
+          } 
         case 4:
-          if (!isIncomplete(getColumns().column2)) {
-            isWinningDirection(getColumns().column2, 'column2');
+          if (isWinningDirection(getColumns().column2)) {
             winningDirection = 'column2';
             return getWinningDirection();
-          }
+          } 
         case 5: 
-          if (!isIncomplete(getColumns().column3)) {
-            isWinningDirection(getColumns().column3, 'column3');
-            winningDirection = 'column3';
-            return getWinningDirection();
-          }
+        if (isWinningDirection(getColumns().column3)) {
+          winningDirection = 'column3';
+          return getWinningDirection();
+        } 
         case 6:
-          if (!isIncomplete(getMainDiagonal())) {
-            isWinningDirection(getMainDiagonal(), 'mainDiagonal');
+          if (isWinningDirection(getMainDiagonal())) {
             winningDirection = 'mainDiagonal';
             return getWinningDirection();
-          }         
+          }    
         case 7: 
-          if (!isIncomplete(getOffDiagonal())) {
-            isWinningDirection(getOffDiagonal(), 'offDiagonal');
+          if (isWinningDirection(getOffDiagonal())) {
             winningDirection = 'offDiagonal';
             return getWinningDirection();
-          }        
+          }       
       }
     }
   };
