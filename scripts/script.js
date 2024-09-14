@@ -262,6 +262,7 @@ const game = (() => {
           board.setColorForContents();
           player.togglePlayer1Status();
           player.showPlayersTurn();
+          game.handleDraw();
 
           // Only check of winner when numberOfTurns is greater than or equal to 5.
           if (game.getNumberOfTurns() >= 5) {
@@ -276,7 +277,8 @@ const game = (() => {
           board.setColorForContents();
           player.togglePlayer1Status();
           player.showPlayersTurn();
-          
+          game.handleDraw();
+
           // Only check of winner when numberOfTurns is greater than or equal to 5.
           if (game.getNumberOfTurns() >= 5) {
             board.checkAllDirections(board.getDirectionsObject());
