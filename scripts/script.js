@@ -451,7 +451,8 @@ const game = (() => {
       game.setGameState('The game has ended.');
       console.log("The game is draw.");
       playersTurn.style.color = '#b00ee7';
-      playersTurn.textContent = 'The game is draw.'
+      playersTurn.textContent = 'The game is draw.';
+      board.createNewGameButton();
     }
   };
   
