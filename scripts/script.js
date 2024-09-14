@@ -585,7 +585,7 @@ const player = (() => {
 
       turn.textContent = `${game.getWinner()}`;
 
-      if (game.getWinner() === 'Winner is player1.') {
+      if (game.getWinner() === 'The winner is player1.') {
         // End-game function calls
         player.increaseScore('player1');
         game.setGameState('The game has ended.');
@@ -594,7 +594,7 @@ const player = (() => {
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
         board.createNewGameButton();
       } 
-      else {
+      else if (game.getWinner() === 'The winner is player2.'){
         // End-game function calls
         player.increaseScore('player2');
         game.setGameState('The game has ended.');
