@@ -301,6 +301,7 @@ const board = (() => {
 
   const handleNewGameButton = () => {
 
+    game.resetGame();
     emptyBoardGame();
     board.createEmptyBoard();
     game.addEvent(board.getBoxesFromBoard());
@@ -485,6 +486,15 @@ const game = (() => {
     gameState = state;
   };
 
+  // Reset 'winningDirection' 'numberOfTurns', 'winner', 'gameState', 'isPlayer1'
+  const resetGame = () => {
+    board.setWinningDirection('');
+    numberOfTurns = 0;
+    winner = '';
+    gameState = 'The game is on going.';
+    player.setIsPlayer1(true);
+  };
+
   // Make variables and/or functions public
   return {
     addEvent,
@@ -497,6 +507,7 @@ const game = (() => {
     setGameState,
     getGameState,
     handleDraw,
+    resetGame,
   };
 })();
 
