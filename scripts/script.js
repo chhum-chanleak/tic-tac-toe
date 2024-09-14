@@ -404,6 +404,7 @@ const game = (() => {
   const handleDraw = () => {
     if (numberOfTurns === 9 && isDraw()) {
       game.setGameState('The game has ended.');
+      console.log("The game is draw.");
     }
   };
   
