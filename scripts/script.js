@@ -203,15 +203,11 @@ const board = (() => {
   };
 
   // Take two parameters and return true if it is winning direction
-  const isWinningDirection = (direction, directionName) => {
-    for (let i = 0; i < direction.length; i += 1) {
-      if ((direction[i].textContent === direction[i + 1].textContent) && (direction[i + 1].textContent === direction[i + 2].textContent)) {
-        console.log(directionName);
-        return true;
-      } else {
+  const isWinningDirection = (direction) => {
+      if (isIncomplete(direction) || isMixed(direction)) {
         return false;
-      }
-    }
+     }
+     return true
   };
 
   const getWinningDirection = () => winningDirection;
