@@ -309,6 +309,12 @@ const board = (() => {
     player.showPlayersTurn();
   }
 
+  const removeNewGameButton = () => {
+    const button = document.querySelector('.btn.new-game');
+
+    button.remove();
+  };
+
   // Empty each child of .board-game
   const emptyBoardGame = () => {
     const boardGame = document.querySelector('.board-game');
