@@ -92,3 +92,16 @@ body {
     cursor: pointer;
   }
 }
+
+.btn.new-game {
+  padding: var(--spacing-padding);
+  border-radius: var(--border-radius);
+  color: #fff;
+  border: 1px solid #0002;
+  background: #096902;
+  cursor: pointer;
+}
+
+.btn.new-game:hover {
+  font-weight: 200;
+}
