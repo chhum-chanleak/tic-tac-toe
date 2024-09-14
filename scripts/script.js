@@ -181,6 +181,19 @@ const board = (() => {
     return classes;
   };
 
+  const getDirectionByName = (name) => {
+    switch (name) {
+      case 'row1': return getRows().row1;
+      case 'row2': return getRows().row2;
+      case 'row3': return getRows().row3;
+      case 'column1': return getColumns().column1;
+      case 'column2': return getColumns().column2;
+      case 'column3': return getColumns().column3;
+      case 'mainDiagonal': return getMainDiagonal();
+      case 'offDiagonal': return getOffDiagonal();
+    }
+  };
+
   // Pass in a direction and have its color set.
   const setBgColorForDirection = (direction) => {
 
@@ -286,6 +299,7 @@ const board = (() => {
     getWinningDirection,
     setBgColorForDirection,
     isIncomplete,
+    getDirectionByName,
   };
 })();
 
