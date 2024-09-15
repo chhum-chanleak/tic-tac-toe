@@ -504,6 +504,8 @@ const game = (() => {
     gameState = state;
   };
 
+  const getGameHistory = () => gameHistory;
+
   // Reset 'winningDirection' 'numberOfTurns', 'winner', 'gameState', 'isPlayer1'
   const resetGame = () => {
     // Reset players score to 0 when isGameSet() is true
@@ -553,6 +555,7 @@ const game = (() => {
     resetGame,
     decideWinner,
     isGameSet,
+    getGameHistory,
   };
 })();
 
