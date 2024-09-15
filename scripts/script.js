@@ -493,11 +493,11 @@ const game = (() => {
 
   // Reset 'winningDirection' 'numberOfTurns', 'winner', 'gameState', 'isPlayer1'
   const resetGame = () => {
-
     // Reset players score to 0 when isGameSet() is true
     if (isGameSet()) {
       player.getPlayers().player1.score = 0;
       player.getPlayers().player2.score = 0;
+      player.updatePlayersScore();
     }
 
     board.setWinningDirection('');
