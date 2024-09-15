@@ -530,6 +530,18 @@ const game = (() => {
     return false;
   };
 
+  // Check for winning three games in a row.
+  const isThreeInARow = () => {
+    for (let i = 0; i < getGameHistory().length; i = 1) {
+      if (isGameSet() && (getGameHistory()[i] === 'The winner is player1.' || getGameHistory()[i] === 'The winner is player2.')) {
+        if (getGameHistory()[i] === getGameHistory()[i + 1] && getGameHistory()[i] === getGameHistory()[i + 2]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
   // Decide the winner who gets 3 points first.
   const decideWinner = () => {
     const p = document.createElement('p');
@@ -556,6 +568,7 @@ const game = (() => {
     decideWinner,
     isGameSet,
     getGameHistory,
+    isThreeInARow,
   };
 })();
 
