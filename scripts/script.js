@@ -546,6 +546,14 @@ const game = (() => {
     return false;
   };
 
+  const handleThreeInARow = () => {
+    const congrats = document.querySelector('p.congrats');
+
+    if (isThreeInARow()) {
+      congrats.textContent = `WOW! 3 wins in a row. ${getWinner()}`;
+    }
+  };
+
   // Decide the winner who gets 3 points first.
   const decideWinner = () => {
     const p = document.createElement('p');
@@ -574,6 +582,7 @@ const game = (() => {
     getGameHistory,
     isThreeInARow,
     setGameHistory,
+    handleThreeInARow,
   };
 })();
 
