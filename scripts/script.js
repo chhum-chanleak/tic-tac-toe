@@ -654,6 +654,7 @@ const player = (() => {
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
         board.createNewGameButton();
         game.setGameHistory(game.getWinner());
+        game.handleThreeInARow();
       } 
       else if (game.getWinner() === 'The winner is player2.'){
         // End-game function calls
@@ -665,6 +666,7 @@ const player = (() => {
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
         board.createNewGameButton();
         game.setGameHistory(game.getWinner());
+        game.handleThreeInARow();
       }
     }    
   };
