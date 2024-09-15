@@ -535,11 +535,12 @@ const game = (() => {
 
   // Check for winning three games in a row.
   const isThreeInARow = () => {
-    for (let i = 0; i < getGameHistory().length; i = 1) {
-      if (isGameSet() && (getGameHistory()[i] === 'The winner is player1.' || getGameHistory()[i] === 'The winner is player2.')) {
-        if (getGameHistory()[i] === getGameHistory()[i + 1] && getGameHistory()[i] === getGameHistory()[i + 2]) {
-          return true;
-        }
+    const { score: score1  } = player.getPlayers().player1;
+    const { score: score2  } = player.getPlayers().player2;
+    
+    if (isGameSet()) {
+      if ((score1 === 3 && score2 === 0) || (score1 === 0 && score2 === 3)) {
+        return true;
       }
     }
     return false;
