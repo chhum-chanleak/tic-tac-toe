@@ -530,6 +530,8 @@ const game = (() => {
     return false;
   };
 
+  const setGameHistory = (state) => gameHistory.push(state);
+
   // Check for winning three games in a row.
   const isThreeInARow = () => {
     for (let i = 0; i < getGameHistory().length; i = 1) {
@@ -569,6 +571,7 @@ const game = (() => {
     isGameSet,
     getGameHistory,
     isThreeInARow,
+    setGameHistory,
   };
 })();
 
