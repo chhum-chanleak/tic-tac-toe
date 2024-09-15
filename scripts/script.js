@@ -513,6 +513,7 @@ const game = (() => {
       player.getPlayers().player1.score = 0;
       player.getPlayers().player2.score = 0;
       player.updatePlayersScore();
+      gameHistory = [];
     }
 
     board.setWinningDirection('');
