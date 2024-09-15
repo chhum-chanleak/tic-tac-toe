@@ -29,6 +29,10 @@ body {
   gap: 2rem;
 }
 
+h2 {
+  color: #770679;
+}
+
 .info {
   background: #0002;
   width: 80%;
