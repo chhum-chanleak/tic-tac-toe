@@ -642,6 +642,7 @@ const player = (() => {
         console.log(game.getWinner());
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
         board.createNewGameButton();
+        game.setGameHistory(game.getWinner());
       } 
       else if (game.getWinner() === 'The winner is player2.'){
         // End-game function calls
@@ -652,6 +653,7 @@ const player = (() => {
         console.log(game.getWinner());
         board.setBgColorForDirection(board.getDirectionByName(board.checkForWinningDirection()));
         board.createNewGameButton();
+        game.setGameHistory(game.getWinner());
       }
     }    
   };
