@@ -306,6 +306,12 @@ const board = (() => {
   };
 
   const handleNewGameButton = () => {
+    const congrats = document.querySelector('p.congrats');
+
+    if (game.isGameSet()) {
+      congrats.remove();
+    }
+
     game.resetGame();
     emptyBoardGame();
     board.createEmptyBoard();
