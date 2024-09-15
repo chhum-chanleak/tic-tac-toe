@@ -300,7 +300,6 @@ const board = (() => {
   };
 
   const handleNewGameButton = () => {
-
     game.resetGame();
     emptyBoardGame();
     board.createEmptyBoard();
@@ -494,11 +493,26 @@ const game = (() => {
 
   // Reset 'winningDirection' 'numberOfTurns', 'winner', 'gameState', 'isPlayer1'
   const resetGame = () => {
+
+    // Reset players score to 0 when isGameSet() is true
+    if (isGameSet()) {
+      player.getPlayers().player1.score = 0;
+      player.getPlayers().player2.score = 0;
+    }
+
     board.setWinningDirection('');
     numberOfTurns = 0;
     winner = '';
     gameState = 'The game is on going.';
     player.setIsPlayer1(true);
+  };
+
+  // Handle the end game when one of the players' score is 3.
+  const isGameSet = () => {
+    if (player.getPlayers().player1.score === 3 || player.getPlayers().player2.score === 3) {
+      return true;
+    }
+    return false;
   };
 
   // Decide the winner who gets 3 points first.
@@ -524,6 +538,7 @@ const game = (() => {
     handleDraw,
     resetGame,
     decideWinner,
+    isGameSet,
   };
 })();
 
