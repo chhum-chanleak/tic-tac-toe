@@ -105,3 +105,27 @@ body {
 .btn.new-game:hover {
   font-weight: 200;
 }
+
+/* For iphone 14 pro max. */
+@media (max-width: 430px){
+  .info {
+    width: 100%;
+
+    & span {
+      font-size: 12px;
+    }
+  }
+
+  .board-game {
+    height: 20vh;
+
+    & > div {
+      font-size: 2rem;
+      border: 2px solid #0006;
+    }
+  }
+  
+  p.congrats {
+    font-size: 14px;
+  }
+}
